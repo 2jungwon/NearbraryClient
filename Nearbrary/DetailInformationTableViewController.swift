@@ -136,7 +136,7 @@ class DetailInformationTableViewController: UITableViewController {
         isbns?.forEach{isbn in
             NSLog("isbn Nums from Naver : \(isbn)")
         }
-        let urlString = address_call_lamda + (isbns?[0])!
+        let urlString = address_call_lamda + (isbns?[1])!
         NSLog("url address to lambda:" + urlString)
         
         guard let url = URL(string:urlString) else {
@@ -144,9 +144,9 @@ class DetailInformationTableViewController: UITableViewController {
             return
         }
         
-        if !requestAWSLambdaAPI(isbn: (isbns?[0])!,url: url){
+        if !requestAWSLambdaAPI(isbn: (isbns?[1])!,url: url){
             flag_bookExist += 1
-            let bool = requestAWSLambdaAPI(isbn: (isbns?[1])!, url: url)
+            let bool = requestAWSLambdaAPI(isbn: (isbns?[0])!, url: url)
             if !bool{
                 flag_bookExist += 1
             }
@@ -173,7 +173,7 @@ class DetailInformationTableViewController: UITableViewController {
         publisher.text=nowBook?.publisher
         pubdate.text=nowBook?.pubdate
         let cut_isbn=nowBook?.isbn?.components(separatedBy: " ")
-        isbnlabel.text=cut_isbn?[0]
+        isbnlabel.text=cut_isbn?[1]
         link.text=nowBook?.link
         bookImageView.image=nowBook?.image
         
@@ -212,17 +212,21 @@ class DetailInformationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dataIndex = indexPath.row - 1
         if indexPath.row == 0{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell_bookinfo_header")else{return UITableViewCell()
-            }
-            cell.textLabel?.text = tableViewData[indexPath.section].title
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell_bookinfo_header") as! DetaillInformationInfoHeader
+            cell.cell_header.text = tableViewData[indexPath.section].title
             return cell
         }
         else{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell_bookinfo_content")else{return UITableViewCell()
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell_bookinfo_content") as! DetaillInformationInfoContents
             let bookinfo : BookInfo = tableViewData[indexPath.section].sectionData[dataIndex]
             
-            cell.textLabel?.text = bookinfo.status + "\\" + bookinfo.location + bookinfo.returndate
+            cell.location.text = bookinfo.location
+            cell.callno.text=bookinfo.callno
+            cell.status.text=bookinfo.status
+            if(bookinfo.status=="대출중")
+            {
+                cell.status.text = bookinfo.status + bookinfo.returndate
+            }
             return cell
         }
     }

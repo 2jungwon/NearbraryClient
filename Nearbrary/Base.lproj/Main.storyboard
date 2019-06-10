@@ -381,7 +381,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvJ-hY-52r" userLabel="ISBN Label">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="245" height="21.5"/>
+                                                                    <rect key="frame" x="65" y="0.0" width="180" height="21.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="z27-2d-Iip"/>
                                                                     </constraints>
@@ -468,14 +468,14 @@
                                     <outlet property="sogangC" destination="jGz-AL-P1p" id="iSK-dM-HC4"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_bookinfo_header" textLabel="PIg-le-LhC" rowHeight="117" style="IBUITableViewCellStyleDefault" id="gnH-p2-qNg" customClass="DetaillInformation_bookinfo_lib" customModule="Nearbrary" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_bookinfo_header" textLabel="PIg-le-LhC" rowHeight="117" style="IBUITableViewCellStyleDefault" id="gnH-p2-qNg" customClass="DetaillInformationInfoHeader" customModule="Nearbrary" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="296" width="375" height="117"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gnH-p2-qNg" id="DsF-7w-MN1">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="116.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PIg-le-LhC">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PIg-le-LhC">
                                             <rect key="frame" x="16" y="0.0" width="343" height="116.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -488,13 +488,68 @@
                                     <outlet property="cell_header" destination="PIg-le-LhC" id="cbp-sh-Uoo"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_bookinfo_content" id="y5O-aD-gMM">
-                                <rect key="frame" x="0.0" y="413" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_bookinfo_content" rowHeight="92" id="y5O-aD-gMM" customClass="DetaillInformationInfoContents" customModule="Nearbrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="413" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y5O-aD-gMM" id="q2r-FG-bUd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5w-aJ-DLy">
+                                            <rect key="frame" x="5" y="5" width="365" height="81.5"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIp-Y7-mX6" userLabel="LeftView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="243.5" height="81.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="중앙도서관" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnj-5f-4xt">
+                                                            <rect key="frame" x="15" y="0.0" width="230" height="52"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="005.01 허23ㅇ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZv-qv-ocm">
+                                                            <rect key="frame" x="15" y="42" width="230" height="39"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3S-EW-1Lh" userLabel="RightView">
+                                                    <rect key="frame" x="243.5" y="0.0" width="121.5" height="81.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="대출가능" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjB-Sf-7kH">
+                                                            <rect key="frame" x="8" y="8" width="106" height="66"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="81.5" id="0ag-qW-d0y"/>
+                                                <constraint firstItem="u3S-EW-1Lh" firstAttribute="width" secondItem="pIp-Y7-mX6" secondAttribute="width" multiplier="0.5" id="SnZ-pm-8Oc"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="F5w-aJ-DLy" secondAttribute="bottom" constant="5" id="CHF-BQ-mds"/>
+                                        <constraint firstAttribute="trailing" secondItem="F5w-aJ-DLy" secondAttribute="trailing" constant="5" id="DeP-ey-MCs"/>
+                                        <constraint firstItem="F5w-aJ-DLy" firstAttribute="top" secondItem="q2r-FG-bUd" secondAttribute="top" constant="5" id="l85-Kx-zgs"/>
+                                        <constraint firstItem="F5w-aJ-DLy" firstAttribute="leading" secondItem="q2r-FG-bUd" secondAttribute="leading" constant="5" id="pNh-dM-BrF"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="callno" destination="kZv-qv-ocm" id="fY5-KJ-E5w"/>
+                                    <outlet property="location" destination="pnj-5f-4xt" id="kJs-yG-PHk"/>
+                                    <outlet property="status" destination="pjB-Sf-7kH" id="Ang-Ve-MOy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -515,7 +570,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bzt-Tc-c47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2697" y="306"/>
+            <point key="canvasLocation" x="2696.8000000000002" y="305.39730134932535"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lcG-gJ-KAt">

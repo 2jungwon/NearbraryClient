@@ -1,5 +1,5 @@
 //
-//  DetaillInformation_bookinfo_lib.swift
+//  DetaillInformationInfoHeader.swift
 //  Nearbrary
 //
 //  Created by 김동규 on 09/06/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetaillInformation_bookinfo_lib: UITableViewCell {
+class DetaillInformationInfoHeader: UITableViewCell {
 
     
     @IBOutlet weak var cell_header: UILabel!
